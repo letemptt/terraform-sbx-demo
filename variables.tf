@@ -88,5 +88,5 @@ variable "primary_region" {
 variable "secondary_region" {
   description = "Secondary region to deploy resources into"
   type        = string
-  default     = "eastus"
+  default     = "westus"
 }
