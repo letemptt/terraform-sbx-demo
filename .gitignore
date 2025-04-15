@@ -1,0 +1,11 @@
+env.sh
+*.tfvars
+*.tfstate
+*.tfstate.*
+*.tfplan
+*.tfplan.*
+*.tfvars.json
+*.tfstate.json
+*.tfstate.backup
+providers.tf
+.terraform*
