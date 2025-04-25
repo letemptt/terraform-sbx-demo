@@ -90,3 +90,17 @@ variable "secondary_region" {
   type        = string
   default     = "westus"
 }
+
+#-----------------------------------------
+# Azure MongoDB Variables
+#-----------------------------------------
+variable "mongoAdminUsername" {
+  description = "MongoDB administrator username"
+  type        = string
+  default     = "mongoAdmin"
+}
+variable "mongoAdminPassword" {
+  description = "MongoDB administrator password"
+  type        = string
+  sensitive = true
+}
