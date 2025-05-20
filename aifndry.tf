@@ -13,8 +13,8 @@ resource "azurerm_ai_services" "azais" {
 }
 
 # Create Azure AI Foundry service
-resource "azurerm_ai_foundry" "ai-foundry" {
-  name                = "${var.prefix}-aifndy-${random_integer.ri.result}"                       # AI Foundry service name
+resource "azurerm_ai_foundry" "ai-fndry" {
+  name                = "${var.prefix}-aifndry-${random_integer.ri.result}"                       # AI Foundry service name
   location                      = data.azurerm_resource_group.rg.location
   resource_group_name           = data.azurerm_resource_group.rg.name
   application_insights_id       = azurerm_application_insights.appi.id
