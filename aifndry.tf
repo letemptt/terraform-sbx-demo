@@ -30,7 +30,7 @@ resource "azurerm_ai_foundry" "ai-fndry" {
 resource "azurerm_ai_foundry_project" "azaiproj" {
   name               = "${var.prefix}-azaiproj-${random_integer.ri.result}"                          # Project name
   location           = data.azurerm_resource_group.rg.location # Location from the AI Foundry service
-  ai_services_hub_id = data.azurerm_ai_foundry.ai-fndry.id       # Associated AI Foundry service
+  ai_services_hub_id = azurerm_ai_foundry.ai-fndry.id       # Associated AI Foundry service
 
   identity {
     type = "SystemAssigned" # Enable system-assigned managed identity
