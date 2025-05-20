@@ -9,3 +9,4 @@ env.sh
 *.tfstate.backup
 providers.tf
 .terraform*
+*.out
