@@ -9,7 +9,7 @@ resource "azurerm_ai_services" "azais" {
   name                  = "${var.prefix}azais"                     # AI Services resource name
   location              = data.azurerm_resource_group.rg.location
   resource_group_name   = data.azurerm_resource_group.rg.name
-  sku_name            = "S0"                                    # Pricing SKU tier
+  sku_name            = "F0"                                    # Pricing SKU tier
 }
 
 # Create Azure AI Foundry service
