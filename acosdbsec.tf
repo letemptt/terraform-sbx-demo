@@ -7,16 +7,6 @@ resource "random_integer" "ri" {
 # Use the VNet module from vnet.tf instead of referencing an existing one
 # No need for the data source anymore since we're creating the VNet in vnet.tf
 
-# Create a subnet for the private endpoint in the existing VNet
-resource "azurerm_subnet" "cosmos_subnet" {
-  name                 = "${var.prefix}-cosmos-subnet-${random_integer.ri.result}"
-  resource_group_name  = data.azurerm_resource_group.rg.name  # Using the same resource group as the VNet
-  virtual_network_name = azurerm_virtual_network.vnet.name  # Reference the VNet from vnet.tf
-  address_prefixes     = ["10.1.1.0/24"] # Make sure this doesn't overlap with existing subnets
-  
-  # Configure private endpoint network policies
-  private_link_service_network_policies_enabled = false
-}
 
 resource "azurerm_cosmosdb_account" "db" {
   name                = "${var.prefix}db${random_integer.ri.result}"
