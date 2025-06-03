@@ -99,8 +99,39 @@ variable "mongoAdminUsername" {
   type        = string
   default     = "mongoAdmin"
 }
+
 variable "mongoAdminPassword" {
   description = "MongoDB administrator password"
   type        = string
   sensitive = true
+}
+
+#-----------------------------------------
+# Azure VNET Variables
+#-----------------------------------------
+
+variable "vnet_address_prefix" {
+  description = "Address space for the virtual network in CIDR notation"
+  type        = string
+  default     = "10.0.0.0/21"  # /21 provides 2,048 IP addresses
+  
+  validation {
+    condition     = can(cidrnetmask(var.vnet_address_prefix))
+    error_message = "The vnet_address_prefix must be a valid CIDR notation."
+  }
+}
+
+variable "subnet_service_endpoints" {
+  description = "List of service endpoints to enable for the subnets"
+  type        = list(string)
+  default     = ["Microsoft.Storage", "Microsoft.Sql", "Microsoft.AzureCosmosDB"]
+}
+
+variable "tags" {
+  description = "Tags to apply to all resources"
+  type        = map(string)
+  default     = {
+    Environment = "Development"
+    ManagedBy   = "Terraform"
+  }
 }
