@@ -26,8 +26,12 @@ resource "azurerm_cosmosdb_account" "db" {
     name = "mongoEnableDocLevelTTL"
   }
 
+  # capabilities {
+  #   name = "MongoDBv3.4"
+  # }
+
   capabilities {
-    name = "MongoDBv3.4"
+    name = "AllowSelfServeUpgradetoMongo36"
   }
 
   capabilities {
