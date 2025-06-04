@@ -31,7 +31,7 @@ resource "azurerm_cosmosdb_account" "db" {
   # }
 
   capabilities {
-    name = "AllowSelfServeUpgradetoMongo36"
+    name = "AllowSelfServeUpgradeToMongo36"
   }
 
   capabilities {
