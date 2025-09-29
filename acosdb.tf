@@ -1,8 +1,8 @@
 
-resource "random_integer" "ri" {
-  min = 10000
-  max = 99999
-}
+# resource "random_integer" "ri" {
+#   min = 10000
+#   max = 99999
+# }
 
 resource "azurerm_cosmosdb_account" "db" {
   name                = "${var.prefix}db${random_integer.ri.result}"
@@ -19,10 +19,6 @@ resource "azurerm_cosmosdb_account" "db" {
 
   capabilities {
     name = "mongoEnableDocLevelTTL"
-  }
-
-  capabilities {
-    name = "MongoDBv3.4"
   }
 
   capabilities {
@@ -44,6 +40,7 @@ resource "azurerm_cosmosdb_account" "db" {
     location          = var.secondary_region
     failover_priority = 0
   }
+  mongo_server_version = "4.0"
 }
 
 ## Creating MongoDB database

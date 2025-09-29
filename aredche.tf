@@ -1,5 +1,5 @@
 
-# NOTE: the Name used for Redis needs to be globally unique
+# ##NOTE: the Name used for Redis needs to be globally unique
 # resource "azurerm_redis_cache" "rc" {
 #   name                 = "${var.prefix}rc"
 #   location             = data.azurerm_resource_group.rg.location

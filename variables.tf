@@ -83,7 +83,7 @@ variable "partition_count" {
 variable "primary_region" {
   description = "Primary region to deploy resources into"
   type        = string
-  default     = "westus2"
+  default     = "westus3"
 }
 variable "secondary_region" {
   description = "Secondary region to deploy resources into"
@@ -127,6 +127,10 @@ variable "subnet_service_endpoints" {
   default     = ["Microsoft.Storage", "Microsoft.Sql", "Microsoft.AzureCosmosDB"]
 }
 
+#-----------------------------------------
+# Azure TAGS Variables
+#-----------------------------------------
+
 variable "tags" {
   description = "Tags to apply to all resources"
   type        = map(string)
@@ -134,4 +138,12 @@ variable "tags" {
     Environment = "Development"
     ManagedBy   = "Terraform"
   }
+}
+#-----------------------------------------
+# Azure APP Service Variables
+#-----------------------------------------
+variable "linuxFxVersion" {
+  description = "LinuxVersion for the App Service"
+  type        = string
+  default     = "DOTNETCORE|7.0"
 }

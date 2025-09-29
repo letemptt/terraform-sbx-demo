@@ -1,24 +1,24 @@
 
-## Creating MongoDB account
-resource "random_integer" "ri" {
-  min = 10000
-  max = 99999
-}
-resource "azurerm_mongo_cluster" "mcdb" {
-  name                = "${var.prefix}-${random_integer.ri.result}"
-  location            = data.azurerm_resource_group.rg.location
-  resource_group_name = data.azurerm_resource_group.rg.name
-  administrator_username = var.mongoAdminUsername
-  administrator_password = var.mongoAdminPassword
-  shard_count         = 1
-  compute_tier = "M40"
-  high_availability_mode = "ZoneRedundantPreferred"
-  storage_size_in_gb = 32
-  version = "5.0"
+# ## Creating MongoDB account
+# resource "random_integer" "ri" {
+#   min = 10000
+#   max = 99999
+# }
+# resource "azurerm_mongo_cluster" "mcdb" {
+#   name                = "${var.prefix}-${random_integer.ri.result}"
+#   location            = data.azurerm_resource_group.rg.location
+#   resource_group_name = data.azurerm_resource_group.rg.name
+#   administrator_username = var.mongoAdminUsername
+#   administrator_password = var.mongoAdminPassword
+#   shard_count         = 1
+#   compute_tier = "M40"
+#   high_availability_mode = "ZoneRedundantPreferred"
+#   storage_size_in_gb = 32
+#   version = "5.0"
 
-}
+# }
 
-## MongoDB database with Replication
+# # MongoDB database with Replication
 # resource "azurerm_mongo_cluster" "mcdb" {
 #   name                = "${var.prefix}-${random_integer.ri.result}"
 #   location            = data.azurerm_resource_group.rg.location

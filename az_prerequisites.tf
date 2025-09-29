@@ -39,6 +39,10 @@ resource "azurerm_container_registry" "cr" {
   admin_enabled       = true
 }
 
+resource "random_integer" "ri" {
+  min = 10000
+  max = 99999
+}
 
 # Azure AI Service
 # https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/cognitive_account

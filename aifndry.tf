@@ -1,9 +1,9 @@
 
 # Generate random value for unique resource naming
-resource "random_integer" "ri" {
-  min = 10000
-  max = 99999
-}
+# resource "random_integer" "ri" {
+#   min = 10000
+#   max = 99999
+# }
 # Deploy Azure AI Services resource
 resource "azurerm_ai_services" "azais" {
   name                  = "${var.prefix}azais"                     # AI Services resource name

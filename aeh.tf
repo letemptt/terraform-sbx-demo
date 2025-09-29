@@ -1,8 +1,8 @@
-#
-# Azure Machine Learning Studio
-#
+# #
+# # Azure Machine Learning Studio
+# #
 
-# https://learn.microsoft.com/en-us/azure/machine-learning/how-to-manage-workspace-terraform
+# # https://learn.microsoft.com/en-us/azure/machine-learning/how-to-manage-workspace-terraform
 
 
 # resource "azurerm_eventhub_namespace" "ehnsp" {
